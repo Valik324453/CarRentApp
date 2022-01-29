@@ -70,6 +70,7 @@ namespace CarRent_29_01_2022_
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(200, 22);
             this.tbPassword.TabIndex = 4;
+            this.tbPassword.MouseLeave += new System.EventHandler(this.tbPassword_MouseLeave);
             // 
             // lPassword
             // 
@@ -83,6 +84,7 @@ namespace CarRent_29_01_2022_
             // bLogin
             // 
             this.bLogin.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.bLogin.Enabled = false;
             this.bLogin.Location = new System.Drawing.Point(326, 176);
             this.bLogin.Name = "bLogin";
             this.bLogin.Size = new System.Drawing.Size(75, 23);

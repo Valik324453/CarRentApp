@@ -19,6 +19,15 @@ namespace CarRent_29_01_2022_
 
         private void bLogin_Click(object sender, EventArgs e)
         {
+            
+            /*else
+            {
+                MessageBox.Show(tbUsername.Text + " " + tbPassword.Text);
+            }*/
+        }
+
+        private void tbPassword_MouseLeave(object sender, EventArgs e)
+        {
             if (string.IsNullOrEmpty(tbUsername.Text))
             {
                 MessageBox.Show("Please fill username");
@@ -29,10 +38,9 @@ namespace CarRent_29_01_2022_
                 MessageBox.Show("Please fill password");
                 tbUsername.Select();
             }
-            /*else
-            {
-                MessageBox.Show(tbUsername.Text + " " + tbPassword.Text);
-            }*/
+            bLogin.Enabled = true;
+            bLogin.Select();
         }
+
     }
 }
