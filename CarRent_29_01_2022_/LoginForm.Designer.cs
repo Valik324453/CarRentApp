@@ -89,6 +89,7 @@ namespace CarRent_29_01_2022_
             this.bLogin.TabIndex = 5;
             this.bLogin.Text = "Login";
             this.bLogin.UseVisualStyleBackColor = false;
+            this.bLogin.Click += new System.EventHandler(this.bLogin_Click);
             // 
             // LoginForm
             // 
