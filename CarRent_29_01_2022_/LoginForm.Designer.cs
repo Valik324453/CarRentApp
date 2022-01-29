@@ -1,7 +1,7 @@
 ﻿
 namespace CarRent_29_01_2022_
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,17 @@ namespace CarRent_29_01_2022_
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // LoginForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "LoginForm";
+            this.Text = "Login";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
