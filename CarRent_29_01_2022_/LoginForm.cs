@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,28 +21,47 @@ namespace CarRent_29_01_2022_
 
         private void bLogin_Click(object sender, EventArgs e)
         {
-            
-            /*else
+            try
             {
-                MessageBox.Show(tbUsername.Text + " " + tbPassword.Text);
-            }*/
+                SHA256 sha = SHA256.Create();
+                string hashPassword = Utils.HashPassword(tbPassword.Text);
+
+                //get active user by username, password(hashpassword)
+                var user = 1;//user from db
+                if(user == null)
+                {
+                    MessageBox.Show("Incorrect password or login");
+                }
+                else//user exists
+                {
+                    Thread.Sleep(1000);
+                    var mainWindow = new MainWindow();
+                    mainWindow.Show();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void tbPassword_MouseLeave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbUsername.Text))
+            if (!string.IsNullOrEmpty(tbUsername.Text) && !string.IsNullOrEmpty(tbPassword.Text))
             {
-                MessageBox.Show("Please fill username");
-                tbUsername.Select();
+                bLogin.Enabled = true;
+                bLogin.Select();
             }
-            if (string.IsNullOrEmpty(tbPassword.Text))
-            {
-                MessageBox.Show("Please fill password");
-                tbUsername.Select();
-            }
-            bLogin.Enabled = true;
-            bLogin.Select();
         }
 
+        private void tbUsername_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbUsername.Text))
+            {
+                label1.Text = "Please fill username";
+                tbUsername.Select();
+            }
+        }
     }
 }
