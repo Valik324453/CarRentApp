@@ -16,5 +16,25 @@ namespace CarRent_29_01_2022_
         {
             InitializeComponent();
         }
+
+        private void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var id = (int)dgvUserList.SelectedRows[0].Cells["id"].Value;
+                var user = 1;
+                //query db for record
+                //dbContext.users.firstOrDefault(x->x.id==id);
+                var hashPassword = Utils.DefaultHashPassword();
+                //User.password=hashPassword
+                //dbContext.SaveChanges();
+                MessageBox.Show("Password has been reseted");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Try again");
+            }
+        }
     }
 }

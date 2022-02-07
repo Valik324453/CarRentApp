@@ -33,8 +33,8 @@ namespace CarRent_29_01_2022_
             this.btnAddNewUser = new System.Windows.Forms.Button();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.btnActivateDeactivateUser = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvUserList = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRefresh
@@ -66,6 +66,7 @@ namespace CarRent_29_01_2022_
             this.btnResetPassword.TabIndex = 2;
             this.btnResetPassword.Text = "Reset Password";
             this.btnResetPassword.UseVisualStyleBackColor = true;
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // btnActivateDeactivateUser
             // 
@@ -77,29 +78,29 @@ namespace CarRent_29_01_2022_
             this.btnActivateDeactivateUser.Text = "Activate/Deactivate User";
             this.btnActivateDeactivateUser.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvUserList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(775, 341);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvUserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserList.Location = new System.Drawing.Point(12, 54);
+            this.dgvUserList.Name = "dgvUserList";
+            this.dgvUserList.RowHeadersWidth = 51;
+            this.dgvUserList.RowTemplate.Height = 24;
+            this.dgvUserList.Size = new System.Drawing.Size(775, 341);
+            this.dgvUserList.TabIndex = 4;
             // 
             // ManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvUserList);
             this.Controls.Add(this.btnActivateDeactivateUser);
             this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.btnAddNewUser);
             this.Controls.Add(this.btnRefresh);
             this.Name = "ManageUsers";
             this.Text = "ManageUsers";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -110,6 +111,6 @@ namespace CarRent_29_01_2022_
         private System.Windows.Forms.Button btnAddNewUser;
         private System.Windows.Forms.Button btnResetPassword;
         private System.Windows.Forms.Button btnActivateDeactivateUser;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUserList;
     }
 }

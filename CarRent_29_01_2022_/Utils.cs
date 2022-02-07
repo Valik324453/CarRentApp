@@ -36,5 +36,11 @@ namespace CarRent_29_01_2022_
             }
             return stringBuilder.ToString();
         }
+
+        public static string DefaultHashPassword()
+        {
+            var defaulHash = HashPassword("password@123");
+            return defaulHash;
+        }
     }
 }
