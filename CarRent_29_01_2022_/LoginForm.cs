@@ -23,6 +23,7 @@ namespace CarRent_29_01_2022_
         {
             try
             {
+                //MessageBox.Show(Utils.HashPassword(tbPassword.Text));
                 SHA256 sha = SHA256.Create();
                 string hashPassword = Utils.HashPassword(tbPassword.Text);
                 //get active user by username, password(hashpassword)
@@ -65,6 +66,12 @@ namespace CarRent_29_01_2022_
                 label1.Text = "Please fill username";
                 tbUsername.Select();
             }
+        }
+
+        public static string DefaultHashPassword()
+        {
+            var defaultHash = Utils.HashPassword("Password@123");
+            return defaultHash;
         }
     }
 }

@@ -23,6 +23,7 @@ namespace CarRent_29_01_2022_
 
         public MainWindow(LoginForm loginForm, string userModel)
         {
+            InitializeComponent();
             _login = loginForm;
             user = userModel;
             roleName = "systAdmin";
@@ -43,6 +44,18 @@ namespace CarRent_29_01_2022_
         {
             _login.Close();
 
+        }
+
+        
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Utils.FormIsOpen("ManageUsers"))
+            {
+                var manageUsers = new ManageUsers();
+                // manageUsers.MdiParent = this;
+                manageUsers.Show();
+            }
         }
     }
 }
