@@ -30,10 +30,6 @@ namespace CarRent_29_01_2022_
             roleName = "Admin";
             //user.role      role:id,name,shortname
             //roleName= userModel.role.shortname;
-
-
-
-            MessageBox.Show($"{user} {roleName}");
         }
 
         private void MainWindow_Load(object sender, EventArgs e)

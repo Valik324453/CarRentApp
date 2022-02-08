@@ -17,6 +17,7 @@ namespace CarRent_29_01_2022_
         public LoginForm()
         {
             InitializeComponent();
+            //tbUsername.Text = Utils.HashPassword("1");
         }
 
         private void bLogin_Click(object sender, EventArgs e)
