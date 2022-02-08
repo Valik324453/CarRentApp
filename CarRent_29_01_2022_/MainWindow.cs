@@ -26,13 +26,13 @@ namespace CarRent_29_01_2022_
             InitializeComponent();
             _login = loginForm;
             user = userModel;
-            roleName = "systAdmin";
+            roleName = "Admin";
             //user.role      role:id,name,shortname
             //roleName= userModel.role.shortname;
 
 
 
-            MessageBox.Show($"{user}");
+            MessageBox.Show($"{user} {roleName}");
         }
 
         private void MainWindow_Load(object sender, EventArgs e)

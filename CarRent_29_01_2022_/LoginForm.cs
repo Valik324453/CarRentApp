@@ -34,7 +34,8 @@ namespace CarRent_29_01_2022_
                 }
                 else//user exists
                 {
-                    Thread.Sleep(1000);
+
+                    
                     var mainWindow = new MainWindow(this, user);
                     mainWindow.Show();
                     Hide();
