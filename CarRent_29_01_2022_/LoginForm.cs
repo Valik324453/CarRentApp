@@ -21,13 +21,18 @@ namespace CarRent_29_01_2022_
 
         private void bLogin_Click(object sender, EventArgs e)
         {
+            var carRentDbContext = new CarRentDbContext();
             try
             {
                 //MessageBox.Show(Utils.HashPassword(tbPassword.Text));
                 SHA256 sha = SHA256.Create();
                 string hashPassword = Utils.HashPassword(tbPassword.Text);
                 //get active user by username, password(hashpassword)
-                var user = "Valik";//user from db
+                var userName = tbUsername.Text.Trim();
+
+                var user = carRentDbContext.Users.FirstOrDefault
+                    (x => x.UserName == userName && x.Password == hashPassword && x.IsActive == true);
+
                 if (user == null)
                 {
                     MessageBox.Show("Incorrect password or login");

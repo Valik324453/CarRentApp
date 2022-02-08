@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRent_29_01_2022_.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace CarRent_29_01_2022_
     public partial class MainWindow : Form
     {
         private LoginForm _login;
-        public string user;//model (db)
+        public User user;//model (db)
         public string roleName;
 
         public MainWindow()
@@ -21,7 +22,7 @@ namespace CarRent_29_01_2022_
             InitializeComponent();
         }
 
-        public MainWindow(LoginForm loginForm, string userModel)
+        public MainWindow(LoginForm loginForm, User userModel)
         {
             InitializeComponent();
             _login = loginForm;
