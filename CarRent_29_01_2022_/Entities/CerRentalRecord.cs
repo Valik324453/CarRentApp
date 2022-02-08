@@ -2,7 +2,7 @@
 
 namespace CarRent_29_01_2022_.Entities
 {
-    public class CerRentalRecord
+    public class CarRentalRecord
     {
         public int Id { get; set; }
         public string CustomerName { get; set; }

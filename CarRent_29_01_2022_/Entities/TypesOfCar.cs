@@ -15,6 +15,6 @@ namespace CarRent_29_01_2022_.Entities
         public string LicensePlateNumber { get; set; }
         public int? Year { get; set; }
 
-        public virtual ICollection<CerRentalRecord> CerRentalRecords { get; set; }
+        public virtual ICollection<CarRentalRecord> CerRentalRecords { get; set; }
     }
 }
