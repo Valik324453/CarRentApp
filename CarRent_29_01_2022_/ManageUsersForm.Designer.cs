@@ -1,7 +1,7 @@
 ﻿
 namespace CarRent_29_01_2022_
 {
-    partial class ManageUsers
+    partial class ManageUsersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -46,6 +46,7 @@ namespace CarRent_29_01_2022_
             this.btnRefresh.TabIndex = 0;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnAddNewUser
             // 
@@ -88,7 +89,7 @@ namespace CarRent_29_01_2022_
             this.dgvUserList.Size = new System.Drawing.Size(775, 341);
             this.dgvUserList.TabIndex = 4;
             // 
-            // ManageUsers
+            // ManageUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,8 +99,9 @@ namespace CarRent_29_01_2022_
             this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.btnAddNewUser);
             this.Controls.Add(this.btnRefresh);
-            this.Name = "ManageUsers";
+            this.Name = "ManageUsersForm";
             this.Text = "ManageUsers";
+            this.Load += new System.EventHandler(this.ManageUsersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserList)).EndInit();
             this.ResumeLayout(false);
 

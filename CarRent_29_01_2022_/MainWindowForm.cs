@@ -49,7 +49,7 @@ namespace CarRent_29_01_2022_
         {
             if (!Utils.FormIsOpen("ManageUsers"))
             {
-                var manageUsers = new ManageUsers();
+                var manageUsers = new ManageUsersForm();
                 // manageUsers.MdiParent = this;
                 manageUsers.Show();
             }
