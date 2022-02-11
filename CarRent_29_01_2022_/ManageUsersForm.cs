@@ -24,12 +24,12 @@ namespace CarRent_29_01_2022_
             try
             {
                 var id = (int)dgvUserList.SelectedRows[0].Cells["id"].Value;
-                var user = 1;
+
                 //query db for record
-                //dbContext.users.firstOrDefault(x->x.id==id);
+                var user = _dbContext.Users.FirstOrDefault(x => x.Id == id);
                 var hashPassword = Utils.DefaultHashPassword();
-                //User.password=hashPassword
-                //dbContext.SaveChanges();
+                user.Password = hashPassword;
+                _dbContext.SaveChanges();
                 MessageBox.Show("Password has been reseted");
             }
             catch (Exception)
@@ -50,7 +50,7 @@ namespace CarRent_29_01_2022_
             {
                 x.Id,
                 x.UserName,
-                RoleName = x.UserRoles.FirstOrDefault().Role.Name,
+                //RoleName = x.UserRoles.FirstOrDefault().Role.Name,
                 x.UserRoles.FirstOrDefault().Role.Name,
                 x.IsActive
             }).ToList();
