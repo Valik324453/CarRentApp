@@ -44,7 +44,7 @@ namespace CarRent_29_01_2022_
             PopulateGrid();
         }
 
-        private void PopulateGrid()
+        public void PopulateGrid()
         {
             var users = _dbContext.Users.Select(x => new
             {
@@ -63,6 +63,37 @@ namespace CarRent_29_01_2022_
         private void ManageUsersForm_Load(object sender, EventArgs e)
         {
             PopulateGrid();
+        }
+
+        private void btnActivateDeactivateUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var id = (int)dgvUserList.SelectedRows[0].Cells["Id"].Value;
+                var user = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+                if (user != null)
+                {
+                    user.IsActive = !user.IsActive;
+                    _dbContext.SaveChanges();
+                    MessageBox.Show("User status has been changed");
+                    PopulateGrid();
+                }
+                else
+                {
+                    MessageBox.Show("User not found");
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Exception on update user status");
+            }
+        }
+
+        private void btnAddNewUser_Click(object sender, EventArgs e)
+        {
+            var addUser = new AddNewUserForm(this);
+            addUser.Show();
         }
     }
 }

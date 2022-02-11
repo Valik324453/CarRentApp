@@ -57,6 +57,7 @@ namespace CarRent_29_01_2022_
             this.btnAddNewUser.TabIndex = 1;
             this.btnAddNewUser.Text = "Add New User";
             this.btnAddNewUser.UseVisualStyleBackColor = true;
+            this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
             // 
             // btnResetPassword
             // 
@@ -78,6 +79,7 @@ namespace CarRent_29_01_2022_
             this.btnActivateDeactivateUser.TabIndex = 3;
             this.btnActivateDeactivateUser.Text = "Activate/Deactivate User";
             this.btnActivateDeactivateUser.UseVisualStyleBackColor = true;
+            this.btnActivateDeactivateUser.Click += new System.EventHandler(this.btnActivateDeactivateUser_Click);
             // 
             // dgvUserList
             // 
@@ -86,6 +88,7 @@ namespace CarRent_29_01_2022_
             this.dgvUserList.Name = "dgvUserList";
             this.dgvUserList.RowHeadersWidth = 51;
             this.dgvUserList.RowTemplate.Height = 24;
+            this.dgvUserList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUserList.Size = new System.Drawing.Size(775, 341);
             this.dgvUserList.TabIndex = 4;
             // 
