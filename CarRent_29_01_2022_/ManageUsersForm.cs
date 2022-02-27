@@ -71,6 +71,7 @@ namespace CarRent_29_01_2022_
             {
                 var id = (int)dgvUserList.SelectedRows[0].Cells["Id"].Value;
                 var user = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+                
                 if (user != null)
                 {
                     user.IsActive = !user.IsActive;
@@ -94,6 +95,11 @@ namespace CarRent_29_01_2022_
         {
             var addUser = new AddNewUserForm(this);
             addUser.Show();
+        }
+
+        private void dgvUserList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

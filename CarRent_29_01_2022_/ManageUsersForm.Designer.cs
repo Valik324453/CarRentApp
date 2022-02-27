@@ -91,6 +91,7 @@ namespace CarRent_29_01_2022_
             this.dgvUserList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUserList.Size = new System.Drawing.Size(775, 341);
             this.dgvUserList.TabIndex = 4;
+            this.dgvUserList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserList_CellContentClick);
             // 
             // ManageUsersForm
             // 

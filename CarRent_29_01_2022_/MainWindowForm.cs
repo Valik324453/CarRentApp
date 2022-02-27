@@ -32,10 +32,6 @@ namespace CarRent_29_01_2022_
             //roleName= userModel.role.shortname;
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -52,6 +48,15 @@ namespace CarRent_29_01_2022_
                 var manageUsers = new ManageUsersForm();
                 // manageUsers.MdiParent = this;
                 manageUsers.Show();
+            }
+        }
+
+        private void addRentalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(!Utils.FormIsOpen("AddEditRentalForm"))
+            {
+                var addEditRentalForm = new AddEditRentalForm();
+                addEditRentalForm.Show();
             }
         }
     }
