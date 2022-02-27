@@ -17,7 +17,7 @@ namespace CarRent_29_01_2022_
         public LoginForm()
         {
             InitializeComponent();
-            tbUsername.Text = Utils.HashPassword("1");
+            //tbUsername.Text = Utils.HashPassword("1");
         }
 
         private void bLogin_Click(object sender, EventArgs e)
@@ -25,10 +25,10 @@ namespace CarRent_29_01_2022_
             var carRentDbContext = new CarRentDbContext();
             try
             {
-                //MessageBox.Show(Utils.HashPassword(tbPassword.Text));
-                SHA256 sha = SHA256.Create();
+
+                /*SHA256 sha = SHA256.Create();
                 string hashPassword = Utils.HashPassword(tbPassword.Text);
-                //get active user by username, password(hashpassword)
+
                 var userName = tbUsername.Text.Trim();
 
                 var user = carRentDbContext.Users.FirstOrDefault
@@ -38,14 +38,21 @@ namespace CarRent_29_01_2022_
                 {
                     MessageBox.Show("Incorrect password or login");
                 }
-                else//user exists
+                else
                 {
 
                     
                     var mainWindow = new MainWindow(this, user);
                     mainWindow.Show();
                     Hide();
-                }
+                }*/
+
+                var user = carRentDbContext.Users.FirstOrDefault
+                    (x => x.UserName == "Valik");
+
+                var mainWindow = new MainWindow(this, user);
+                mainWindow.Show();
+                Hide();
 
 
             }
@@ -79,6 +86,11 @@ namespace CarRent_29_01_2022_
         {
             var defaultHash = Utils.HashPassword("Password@123");
             return defaultHash;
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            bLogin.Enabled = true;
         }
     }
 }
