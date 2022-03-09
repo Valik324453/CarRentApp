@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -17,9 +18,25 @@ namespace CarRent_29_01_2022_
     {
         CarRentDbContext _dbContext = new CarRentDbContext();
         private bool _isEditMode;
+        private CarRentalRecord _carRentalRecord;
         public AddEditRentalForm()
         {
             InitializeComponent();
+            this.Text = "Add";
+        }
+
+        public AddEditRentalForm(CarRentalRecord carRentalRecord)
+        {
+            InitializeComponent();
+            btnSave.Text = "Update";
+            _carRentalRecord = carRentalRecord;
+            this.Text = "Edit";
+
+            tbCustomerName.Text = carRentalRecord.CustomerName;
+            tbCost.Text = carRentalRecord.Cost.ToString();
+            dtpDateRented.Text = carRentalRecord.DateRented.Value.ToString();
+            dtpDateReturned.Text = carRentalRecord.DateReturned.Value.ToString();
+            cbTypesOfCars.SelectedValue = carRentalRecord.TypesOfCarId.ToString();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -54,9 +71,24 @@ namespace CarRent_29_01_2022_
                     TypesOfCarId = typeOfCarId
                 };
 
-                _dbContext.CarRentalRecords.Add(car);
-                _dbContext.SaveChanges();
+                if(_carRentalRecord != null)
+                {
+                    _carRentalRecord.CustomerName = customerName;
+                    _carRentalRecord.DateRented = dateRented;
+                    _carRentalRecord.DateRented = dateReturned;
+                    _carRentalRecord.TypesOfCarId = typeOfCarId;
+                    _carRentalRecord.Cost = cost;
 
+                    _dbContext.CarRentalRecords.AddOrUpdate(_carRentalRecord);
+                    _dbContext.SaveChanges();
+
+                    
+                }
+                else
+                {
+                    _dbContext.CarRentalRecords.Add(car);
+                    _dbContext.SaveChanges();
+                }
             }
             catch (Exception)
             {

@@ -36,9 +36,10 @@ namespace CarRent_29_01_2022_
             this.editRentalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewArchiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvRentalRecords = new System.Windows.Forms.DataGridView();
+            this.bRefresh = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRentalRecords)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -82,6 +83,7 @@ namespace CarRent_29_01_2022_
             this.editRentalToolStripMenuItem.Name = "editRentalToolStripMenuItem";
             this.editRentalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.editRentalToolStripMenuItem.Text = "Edit rental";
+            this.editRentalToolStripMenuItem.Click += new System.EventHandler(this.editRentalToolStripMenuItem_Click);
             // 
             // viewArchiveToolStripMenuItem
             // 
@@ -96,30 +98,43 @@ namespace CarRent_29_01_2022_
             this.manageUsersToolStripMenuItem.Text = "Manage users";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
-            // dataGridView1
+            // dgvRentalRecords
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(149, 114);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(549, 265);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvRentalRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRentalRecords.Location = new System.Drawing.Point(12, 31);
+            this.dgvRentalRecords.Name = "dgvRentalRecords";
+            this.dgvRentalRecords.RowHeadersWidth = 51;
+            this.dgvRentalRecords.RowTemplate.Height = 24;
+            this.dgvRentalRecords.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRentalRecords.Size = new System.Drawing.Size(776, 347);
+            this.dgvRentalRecords.TabIndex = 1;
+            // 
+            // bRefresh
+            // 
+            this.bRefresh.Location = new System.Drawing.Point(263, 399);
+            this.bRefresh.Name = "bRefresh";
+            this.bRefresh.Size = new System.Drawing.Size(210, 39);
+            this.bRefresh.TabIndex = 2;
+            this.bRefresh.Text = "Refresh";
+            this.bRefresh.UseVisualStyleBackColor = true;
+            this.bRefresh.Click += new System.EventHandler(this.bRefresh_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.bRefresh);
+            this.Controls.Add(this.dgvRentalRecords);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRentalRecords)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,6 +149,7 @@ namespace CarRent_29_01_2022_
         private System.Windows.Forms.ToolStripMenuItem editRentalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewArchiveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvRentalRecords;
+        private System.Windows.Forms.Button bRefresh;
     }
 }
