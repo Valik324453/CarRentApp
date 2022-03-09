@@ -108,5 +108,15 @@ namespace CarRent_29_01_2022_
             window.Show();
             this.Hide();
         }
+
+        private void viewArchiveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Utils.FormIsOpen("SearchArchiveForm"))
+            {
+                SearchArchiveForm searchArchiveForm = new SearchArchiveForm();
+                searchArchiveForm.Show();
+                this.Hide();
+            }
+        }
     }
 }

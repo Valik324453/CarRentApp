@@ -90,6 +90,7 @@ namespace CarRent_29_01_2022_
             this.viewArchiveToolStripMenuItem.Name = "viewArchiveToolStripMenuItem";
             this.viewArchiveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.viewArchiveToolStripMenuItem.Text = "View archive";
+            this.viewArchiveToolStripMenuItem.Click += new System.EventHandler(this.viewArchiveToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
