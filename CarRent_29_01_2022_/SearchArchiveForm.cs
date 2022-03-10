@@ -21,7 +21,11 @@ namespace CarRent_29_01_2022_
 
         private void SearchArchiveForm_Load(object sender, EventArgs e)
         {
-            var carRentalRecords = _dbContext.CarRentalRecords.Select(x => new
+            var date = DateTime.Now.AddDays(-3);
+            var carRentalRecords = _dbContext.CarRentalRecords
+                .Where(x => x.DateRented.Value < DateTime.Now)
+                .Where(x => x.DateRented.Value > date)
+                .Select(x => new
             {
                 x.CustomerName,
                 x.Cost,
