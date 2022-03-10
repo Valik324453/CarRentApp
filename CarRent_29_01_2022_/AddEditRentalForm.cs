@@ -95,6 +95,12 @@ namespace CarRent_29_01_2022_
 
                 throw;
             }
+
+            if (this.Text == "Add")
+                MessageBox.Show("Item added");
+            if (this.Text == "Edit")
+                MessageBox.Show("Item edited");
+            this.Hide();
         }
 
         private void AddEditRentalForm_Load(object sender, EventArgs e)
